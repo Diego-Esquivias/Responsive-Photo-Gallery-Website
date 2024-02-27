@@ -1,3 +1,61 @@
+/* Position close (x) button on top left and make in on the top left of the image*/
+.close {
+    position: absolute;
+    top: 2%;
+    left: 26%;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    font-size: x-large;
+    z-index: 1; /* This makes sure that the x appears on top of the image */
+}
+
+/* Position previous and next buttons on top of the image */
+.prev, .next {
+    position: absolute;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1; /* This makes sure that the x appears on top of the image as well */
+}
+
+.prev {
+    left: 20%; /* Adjust left position to make it closer to the image */
+}
+
+.next {
+    right: 20%; /* Adjust right position to make it closer to the image*/
+}
+
+/* I used this to center the arrows based on the image specifically  */
+.modal-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+/* Makes sure that modal content (image) is behind the arrows and close button */
+.modal-content {
+    z-index: 0;
+}
+
+
+/* Hides body content when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* When the Modal is open, hides  */
+body.modal-open .row {
+    display: none;
+}
+
+#myModal {
+    display: none;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,6 +63,7 @@
 body {
     margin: 0;
     font-family: Arial;
+    background-color: grey;
 }
 
 .header {
@@ -32,7 +91,6 @@ body {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
-    padding: 5px;
     border: 4px solid Black;
     border-radius: 20px;
 }
@@ -63,7 +121,7 @@ body {
     opacity: 1;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .column {
     -ms-flex: 50%;
     flex: 50%;
